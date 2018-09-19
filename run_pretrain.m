@@ -54,8 +54,8 @@ param.sparse_cost = 0.001;
 %save('model30_l2','model');
 
 param = [];
-param.layer = 3;
-param.epochs = 30;
+param.layer = 30;
+param.epochs = 1;
 param.lr = 0.01;
 param.weight_decay = 1e-5;
 param.momentum = [0.5, 0.9];
