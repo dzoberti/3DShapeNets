@@ -1,11 +1,13 @@
 # sample data
-/volumetric_data
+#/volumetric_data
+# Sample data is needed for testing
 
 # Compiled MATLAB
 *.mex*
 
 # Saved models
-*.mat
+#*.mat
+# I need mat files with pretrained stuff
 
 # log files
 *.log*
