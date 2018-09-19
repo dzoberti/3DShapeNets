@@ -53,3 +53,10 @@ If you use our code in your research, please consider citing:
 ## Contact
 
 Please email Zhirong Wu (xavibrowu@gmail.com) for problems and bugs. Thanks!
+
+## Instructions:
+
+1. Run the `setup_paths` script to add the required paths
+2. Run the `kernels` script to add functions
+3. Load a pretrained model from the mat files: discriminative_40_class.mat or generative_40_class.mat
+4. Run `bp_test(model)` for discriminative models or `rec_test(model)` for generative.
