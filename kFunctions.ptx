@@ -5,7 +5,7 @@
 //
 
 .version 4.1
-.target sm_30
+.target sm_20
 .address_size 64
 
 // _Z17kConvolve_forwardPfS_S_iiiiiiiiiiii$__cuda_local_var_34652_35_non_const_shFilters has been demoted
