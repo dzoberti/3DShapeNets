@@ -6,7 +6,7 @@ function batch = read_batch(model, file_list, translation)
 batch_size = length(file_list);
 batch = zeros([batch_size, model.layers{1}.layerSize], 'int8');
 for i = 1 : batch_size
-    load(file_list(i).filename);
+    load(file_list(i).filename); %this loads a variable named instance
     if translation
         orient = randi(7);
         move = 2;

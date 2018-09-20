@@ -60,3 +60,23 @@ Please email Zhirong Wu (xavibrowu@gmail.com) for problems and bugs. Thanks!
 2. Run the `kernels` script to add functions
 3. Load a pretrained model from the mat files: discriminative_40_class.mat or generative_40_class.mat
 4. Run `bp_test(model)` for discriminative models or `rec_test(model)` for generative.
+5. As mentioned in the Data description, you are required to have a folder called volumetric_data in the 3DShapeNets root folder. In order to generate the required files, download the ModelNet10 and ModelNet40 data set with *.off* files. This is achieved by using this command (modify paths accordingly) `write_input_data('../../Downloads/ModelNet10', './volumetric_data', model.classnames, model.volume_size, model.pad_size, 30)`. `mex polygon2voxel_double.c -v` must be done beforehand.
+
+### Usefull functions in voxelization folder
+- `show3DModel(offobj.faces,offobj.vertices)` can visualize the off flies read with off_loader or other meshes in matlab format
+- `polygon2voxel(offobj, [volume_size, volume_size, volume_size], 'auto')` transforms an off mesh file read with off_loader into a voxelized mesh
+- `plot3D(Volume)` can visualize the voxelized meshes, like the ones in volumetric_data and created by polygon2voxel
+- `sparse3D(M)` converts a voxelized mesh to a pointcloud format (Nx3)
+
+### Usefull functions in util
+- before mentioned write_input_data
+- possibly some functions to visualize intermediate layers
+- several functions for batch processing
+
+### Usefull functions in 3D
+- `off_loader()` reads an off file and rotates by theta around z
+- other functions for next veiw, joining point clouds and other
+
+### Usefull functions in bp
+- 
+
