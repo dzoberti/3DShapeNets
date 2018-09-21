@@ -13,7 +13,7 @@ input_shape(1,:,:,:) = voxel_mesh;
 [val, idx] = sort(activation{end}, 'descend');
 
 % return the top 3 labels and probs
-labels = {idx(1), model.classnames{idx(1)}; idx(2) , model.classnames{idx(2)}; idx(3), model.classnames{idx(3)}};
+labels = {idx(1), model.classnames{idx(1)}, idx(2) , model.classnames{idx(2)}, idx(3), model.classnames{idx(3)}};
 probabilities = val(1:3)';
 
 %plot3D(voxel_mesh)
