@@ -5,17 +5,18 @@ function [ Volume ] = pc2vox( ptCloud, VolumeSize, pad_size )
 
 %This is equivalent to auto mode
 %Find the maximum dimension of the cloud for normalization
-% Generally we would have to calculate the max and min of each axis, but
-% these are already given in the Limits
-largestDistance = [...
-    ptCloud.XLimits(2)-ptCloud.XLimits(1),...
-    ptCloud.YLimits(2)-ptCloud.YLimits(1),...
-    ptCloud.ZLimits(2)-ptCloud.ZLimits(1)];
+
+largestDistance = max(ptCloud.Location) - min(ptCloud.Location);
+% these are also already given in the Limits
+% largestDistance = [...
+%     ptCloud.XLimits(2)-ptCloud.XLimits(1),...
+%     ptCloud.YLimits(2)-ptCloud.YLimits(1),...
+%     ptCloud.ZLimits(2)-ptCloud.ZLimits(1)];
 
 %largest distance must fit in VolumeSize (which in an integer)
 normalizationFactor = (VolumeSize-1) / max(largestDistance);
 
-centerOffset =  largestDistance/2 + [ptCloud.XLimits(1),ptCloud.YLimits(1),ptCloud.ZLimits(1)];
+centerOffset =  largestDistance/2 + min(ptCloud.Location);
 
 normalizedCenteredLocation = (ptCloud.Location - centerOffset) .* normalizationFactor + [VolumeSize/2 VolumeSize/2 VolumeSize/2];
 
