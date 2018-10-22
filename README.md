@@ -69,7 +69,7 @@ Please email Zhirong Wu (xavibrowu@gmail.com) for problems and bugs. Thanks!
 - `sparse3D(M)` converts a voxelized mesh to a pointcloud format (Nx3)
 
 ### Usefull functions in util
-- before mentioned write_input_data
+- beforementioned write_input_data
 - possibly some functions to visualize intermediate layers
 - several functions for batch processing
 
