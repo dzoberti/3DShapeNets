@@ -5,7 +5,8 @@ function [labels, probabilities] = classifyVoxel(model, voxel_mesh)
 % model.volume_size + 2 x model.pad_size
 % It returns a vector of labels, probabilities
 
-
+% the bp_forward function is prepared to take several voxel_meshes at once,
+% we just have one, so we prepare it in the proper shape
 input_shape(1,:,:,:) = voxel_mesh;
 [model, activation] = bp_forward(model, input_shape);
 

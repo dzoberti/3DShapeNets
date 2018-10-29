@@ -7,6 +7,8 @@
 - To run the code, a CUDA supported GPU should be installed.
 - The users should make sure the depth rendering function RenderMex is working properly. It depends on openGL. We suggest to add $MATLAB_HOME/sys/opengl/lib/glnxa64/libGL.so.1 to LD_LIBRARY_PATH.
 - We have tested our code on Ubuntu 12.04 and 14.04, Matlab R2013a and after.
+- You need to havelibosmesa6-dev or newer osmesa installed: ` sudo apt-get install libosmesa6-dev`
+- Mex in Matlab with `mex RenderMex.cpp -lGLU -lOSMesa`, or `mex RenderMex.cpp  -L/opt/X11/lib/  -lOSMesa  -I/opt/X11/include/`
 
 ## Code
 
